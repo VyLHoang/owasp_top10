@@ -1,0 +1,70 @@
+ * Running on http://127.0.0.1:5000
+2025-05-08 14:57:30,357 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 14:57:30,358 - INFO -  * Restarting with stat
+2025-05-08 14:57:30,584 - WARNING -  * Debugger is active!
+2025-05-08 14:57:30,587 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 14:57:34,613 - INFO -  * Detected change in 'E:\\SSS\\Seminar\\CodeTop10\\A09.py', reloading
+2025-05-08 14:57:34,645 - INFO -  * Restarting with stat
+2025-05-08 14:57:34,820 - WARNING -  * Debugger is active!
+2025-05-08 14:57:34,824 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 14:58:20,083 - INFO -  * Detected change in 'E:\\SSS\\Seminar\\CodeTop10\\A09.py', reloading
+2025-05-08 14:58:20,126 - INFO -  * Restarting with stat
+2025-05-08 14:58:20,320 - WARNING -  * Debugger is active!
+2025-05-08 14:58:20,323 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 14:58:30,053 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 14:58:30,053 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 14:58:30,054 - INFO -  * Restarting with stat
+2025-05-08 14:58:30,416 - WARNING -  * Debugger is active!
+2025-05-08 14:58:30,425 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 14:59:08,660 - INFO -  * Detected change in 'E:\\SSS\\Seminar\\CodeTop10\\A09.py', reloading
+2025-05-08 14:59:08,724 - INFO -  * Restarting with stat
+2025-05-08 14:59:08,962 - WARNING -  * Debugger is active!
+2025-05-08 14:59:08,964 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 14:59:10,598 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 14:59:10,598 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 14:59:10,600 - INFO -  * Restarting with stat
+2025-05-08 14:59:10,865 - WARNING -  * Debugger is active!
+2025-05-08 14:59:10,873 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:01:07,586 - INFO -  * Detected change in 'E:\\SSS\\Seminar\\CodeTop10\\A09.py', reloading
+2025-05-08 15:01:07,654 - INFO -  * Restarting with stat
+2025-05-08 15:01:27,006 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 15:01:27,006 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 15:01:27,006 - INFO -  * Restarting with stat
+2025-05-08 15:01:27,191 - WARNING -  * Debugger is active!
+2025-05-08 15:01:27,194 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:05:03,697 - INFO -  * Detected change in 'E:\\SSS\\Seminar\\CodeTop10\\A09.py', reloading
+2025-05-08 15:05:03,731 - INFO -  * Restarting with stat
+2025-05-08 15:05:03,905 - WARNING -  * Debugger is active!
+2025-05-08 15:05:03,908 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:05:35,093 - INFO -  * Detected change in 'E:\\SSS\\Seminar\\CodeTop10\\A09.py', reloading
+2025-05-08 15:05:35,146 - INFO -  * Restarting with stat
+2025-05-08 15:05:35,326 - WARNING -  * Debugger is active!
+2025-05-08 15:05:35,330 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:05:38,316 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 15:05:38,316 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 15:05:38,316 - INFO -  * Restarting with stat
+2025-05-08 15:05:38,469 - WARNING -  * Debugger is active!
+2025-05-08 15:05:38,472 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:10:13,794 - WARNING -  * Debugger is active!
+2025-05-08 15:10:13,803 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:10:18,258 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 15:10:18,258 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 15:10:18,259 - INFO -  * Restarting with stat
+2025-05-08 15:10:18,440 - WARNING -  * Debugger is active!
+2025-05-08 15:10:18,443 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:11:07,700 - INFO -  * Detected change in 'E:\\SSS\\Seminar\\CodeTop10\\A09.py', reloading
+2025-05-08 15:11:07,749 - INFO -  * Restarting with stat
+2025-05-08 15:11:07,921 - WARNING -  * Debugger is active!
+2025-05-08 15:11:07,924 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:11:29,408 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 15:11:29,408 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 15:11:29,409 - INFO -  * Restarting with stat
+2025-05-08 15:11:29,571 - WARNING -  * Debugger is active!
+2025-05-08 15:11:29,574 - INFO -  * Debugger PIN: 130-681-746
+2025-05-08 15:12:07,281 - INFO - 127.0.0.1 - - [08/May/2025 15:12:07] "GET / HTTP/1.1" 200 -

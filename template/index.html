@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP A03:2021 - Injection Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label, input, select, button {
+            margin: 5px 0;
+        }
+        input[type="text"], select {
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .success {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>OWASP A03:2021 - Injection Demo (SQL Injection)</h2>
+        <p>Enter a username to search for a user. Try SQL Injection attacks to see the difference between insecure and secure endpoints.</p>
+
+        <form method="GET" action="/">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="e.g., alice" value="{{ username|default('') }}"><br>
+
+            <label for="mode">Search Mode:</label><br>
+            <select id="mode" name="mode">
+                <option value="insecure" {% if mode = 'insecure' %}selected{% endif %}>Insecure (Vulnerable to SQL Injection)</option>
+                <option value="secure" {% if mode = 'secure' %}selected{% endif %}>Secure (Protected)</option>
+            </select><br>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="results">
+            {% if error %}
+                <p class="error">Error: {{ error }}</p>
+            {% elif users %}
+                <h3>Results:</h3>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                    </tr>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% elif message %}
+                <p class="success">{{ message }}</p>
+            {% endif %}
+        </div>
+
+        <h3>Try SQL Injection</h3>
+        <p>Enter <code>' OR '1'='1</code> as the username to attempt SQL Injection:</p>
+        <ul>
+            <li><strong>Insecure Mode:</strong> This will return all users, showing the vulnerability.</li>
+            <li><strong>Secure Mode:</strong> This will return no results, showing the protection.</li>
+        </ul>
+        <p><strong>Sample Users:</strong> alice, bob, charlie</p>
+    </div>
+</body>
+</html>

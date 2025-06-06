@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP A04:2021 - Insecure Design Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label, input, select, button {
+            margin: 5px 0;
+        }
+        input[type="text"], input[type="password"], select {
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .success {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>OWASP A04:2021 - Insecure Design Demo</h2>
+
+        {% if not logged_in %}
+            <h3>Login</h3>
+            <form id="login-form" method="POST" action="/login">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" placeholder="e.g., alice"><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="e.g., pass123"><br>
+
+                <button type="submit">Login</button>
+            </form>
+            <p><strong>Sample Users:</strong></p>
+            <ul>
+                <li>Alice (username: alice, password: pass123, balance: 1000)</li>
+                <li>Bob (username: bob, password: pass456, balance: 500)</li>
+            </ul>
+        {% else %}
+            <h3>Welcome, {{ username }}!</h3>
+            <p>Your balance: {{ balance }}</p>
+            <form id="logout-form" method="POST" action="/logout">
+                <button type="submit">Logout</button>
+            </form>
+
+            <h3>Transfer Money</h3>
+            <form id="transfer-form" method="POST">
+                <label for="from_account_id">From Account ID:</label><br>
+                <input type="text" id="from_account_id" name="from_account_id" value="{{ session.user_id }}" readonly><br>
+
+                <label for="to_account_id">To Account ID:</label><br>
+                <select id="to_account_id" name="to_account_id">
+                    {% for user in users %}
+                        {% if user.id != session.user_id %}
+                            <option value="{{ user.id }}">{{ user.username }} (ID: {{ user.id }})</option>
+                        {% endif %}
+                    {% endfor %}
+                </select><br>
+
+                <label for="amount">Amount:</label><br>
+                <input type="text" id="amount" name="amount" placeholder="e.g., 100"><br>
+
+                <label for="mode">Transfer Mode:</label><br>
+                <select id="mode" name="mode">
+                    <option value="insecure">Insecure (Vulnerable to Insecure Design)</option>
+                    <option value="secure">Secure (Protected)</option>
+                </select><br>
+
+                <button type="submit" onclick="setAction()">Transfer</button>
+            </form>
+        {% endif %}
+
+        <div id="result"></div>
+
+        {% if not logged_in %}
+            <h3>Instructions</h3>
+            <p>Login to try transferring money between accounts. Test the difference between insecure and secure modes:</p>
+            <ul>
+                <li><strong>Insecure Mode:</strong> Allows transferring money without checking balance or ownership.</li>
+                <li><strong>Secure Mode:</strong> Enforces proper checks (balance, ownership).</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <script>
+        function setAction() {
+            const form = document.getElementById("transfer-form");
+            const mode = document.getElementById("mode").value;
+            form.action = `/transfer/${mode}`;
+        }
+
+        // Xử lý form submit và hiển thị kết quả
+        document.getElementById("login-form")?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const resultDiv = document.getElementById("result");
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form)
+            });
+            const data = await response.json();
+            if (response.ok) {
+                resultDiv.innerHTML = `<p class="success">${data.message}</p>`;
+                setTimeout(() => location.reload(), 1000); // Tải lại trang để cập nhật giao diện
+            } else {
+                resultDiv.innerHTML = `<p class="error">${data.error}</p>`;
+            }
+        });
+
+        document.getElementById("logout-form")?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const resultDiv = document.getElementById("result");
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form)
+            });
+            const data = await response.json();
+            if (response.ok) {
+                resultDiv.innerHTML = `<p class="success">${data.message}</p>`;
+                setTimeout(() => location.reload(), 1000);
+            } else {
+                resultDiv.innerHTML = `<p class="error">${data.error}</p>`;
+            }
+        });
+
+        document.getElementById("transfer-form")?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const resultDiv = document.getElementById("result");
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form)
+            });
+            const data = await response.json();
+            if (response.ok) {
+                resultDiv.innerHTML = `<p class="success">${data.message}</p>`;
+                setTimeout(() => location.reload(), 1000);
+            } else {
+                resultDiv.innerHTML = `<p class="error">${data.error}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
