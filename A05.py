@@ -134,8 +134,8 @@ def add_security_headers(response):
 @app.route("/")
 def index():
     return """
-            <h2>OWASP A04:2021 - Security Misconfiguration</h2>
-            <p><strong>How ro run the Demo:</strong></p>
+            <h2>OWASP A05:2021 - Security Misconfiguration</h2>
+            <p><strong>How to run the Demo:</strong></p>
             <ol>
                 <li>Python 3.x installed </li>
                 <li>Flask installed : pip install flask </li>

@@ -68,3 +68,58 @@
 2025-05-08 15:11:29,571 - WARNING -  * Debugger is active!
 2025-05-08 15:11:29,574 - INFO -  * Debugger PIN: 130-681-746
 2025-05-08 15:12:07,281 - INFO - 127.0.0.1 - - [08/May/2025 15:12:07] "GET / HTTP/1.1" 200 -
+2025-06-07 14:17:44,609 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-07 14:17:44,610 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-07 14:17:44,612 - INFO -  * Restarting with stat
+2025-06-07 14:17:44,878 - WARNING -  * Debugger is active!
+2025-06-07 14:17:44,883 - INFO -  * Debugger PIN: 145-845-851
+2025-06-07 14:18:04,630 - INFO - 127.0.0.1 - - [07/Jun/2025 14:18:04] "GET / HTTP/1.1" 200 -
+2025-06-07 14:18:50,313 - INFO - 127.0.0.1 - - [07/Jun/2025 14:18:50] "POST /login/insecure HTTP/1.1" 200 -
+2025-06-07 14:19:32,000 - INFO - 127.0.0.1 - - [07/Jun/2025 14:19:32] "[31m[1mPOST /login/insecure HTTP/1.1[0m" 401 -
+2025-06-07 14:20:20,521 - INFO - Login successful
+2025-06-07 14:20:20,523 - INFO - 127.0.0.1 - - [07/Jun/2025 14:20:20] "POST /login/secure HTTP/1.1" 200 -
+2025-06-07 14:20:38,384 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:20:38,386 - INFO - 127.0.0.1 - - [07/Jun/2025 14:20:38] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:21:23,606 - WARNING - Invalid credentials - Username not found
+2025-06-07 14:21:23,607 - INFO - 127.0.0.1 - - [07/Jun/2025 14:21:23] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:21:49,185 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:21:49,185 - INFO - 127.0.0.1 - - [07/Jun/2025 14:21:49] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:21:50,729 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:21:50,729 - INFO - 127.0.0.1 - - [07/Jun/2025 14:21:50] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:21:53,131 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:21:53,132 - INFO - 127.0.0.1 - - [07/Jun/2025 14:21:53] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:21:54,677 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:21:54,678 - INFO - 127.0.0.1 - - [07/Jun/2025 14:21:54] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:21:56,094 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:21:56,095 - INFO - 127.0.0.1 - - [07/Jun/2025 14:21:56] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:21:57,647 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:21:57,647 - INFO - 127.0.0.1 - - [07/Jun/2025 14:21:57] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:22:42,371 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:22:42,372 - INFO - 127.0.0.1 - - [07/Jun/2025 14:22:42] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:22:43,550 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:22:43,553 - INFO - 127.0.0.1 - - [07/Jun/2025 14:22:43] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:26:48,633 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-07 14:26:48,634 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-07 14:26:48,638 - INFO -  * Restarting with stat
+2025-06-07 14:26:48,923 - WARNING -  * Debugger is active!
+2025-06-07 14:26:48,927 - INFO -  * Debugger PIN: 145-845-851
+2025-06-07 14:26:59,932 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:26:59,934 - INFO - 127.0.0.1 - - [07/Jun/2025 14:26:59] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:01,390 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:27:01,391 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:01] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:02,652 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:27:02,653 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:02] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:03,945 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:27:03,946 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:03] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:05,077 - WARNING - Invalid credentials - Wrong password
+2025-06-07 14:27:05,078 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:05] "[31m[1mPOST /login/secure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:06,286 - WARNING - Brute force detected
+2025-06-07 14:27:06,287 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:06] "[31m[1mPOST /login/secure HTTP/1.1[0m" 429 -
+2025-06-07 14:27:30,946 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:30] "[31m[1mPOST /login/insecure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:34,121 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:34] "[31m[1mPOST /login/insecure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:34,966 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:34] "[31m[1mPOST /login/insecure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:35,938 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:35] "[31m[1mPOST /login/insecure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:36,884 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:36] "[31m[1mPOST /login/insecure HTTP/1.1[0m" 401 -
+2025-06-07 14:27:38,004 - INFO - 127.0.0.1 - - [07/Jun/2025 14:27:38] "[31m[1mPOST /login/insecure HTTP/1.1[0m" 401 -

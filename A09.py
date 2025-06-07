@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, session
 import logging
 import os
 from datetime import datetime
+from collections import defaultdict
+import time
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -28,6 +30,11 @@ def get_user_by_username(username):
         if user["username"] == username:
             return user
     return None
+
+# Thêm biến lưu số lần đăng nhập sai và thời gian
+FAILED_LOGINS = defaultdict(list)  # key: (ip, username), value: list of timestamps
+BRUTE_FORCE_THRESHOLD = 5          # số lần sai liên tiếp
+BRUTE_FORCE_WINDOW = 60            # trong vòng 60 giây
 
 # Đăng nhập - Phiên bản không an toàn (Logging Failure)
 @app.route("/login/insecure", methods=["POST"])
@@ -73,15 +80,28 @@ def login_secure():
     password = data["password"]
     client_ip = request.remote_addr
 
+    # Kiểm tra brute force
+    key = (client_ip, username)
+    now = time.time()
+    # Xóa các lần sai quá cũ
+    FAILED_LOGINS[key] = [t for t in FAILED_LOGINS[key] if now - t < BRUTE_FORCE_WINDOW]
+    if len(FAILED_LOGINS[key]) >= BRUTE_FORCE_THRESHOLD:
+        logger.warning("Brute force detected", extra={"ip": client_ip, "username": username})
+        return jsonify({"error": "Too many failed login attempts. Please try again later."}), 429
+
     user = get_user_by_username(username)
     if not user:
+        FAILED_LOGINS[key].append(now)
         logger.warning("Invalid credentials - Username not found", extra={"ip": client_ip, "username": username})
         return jsonify({"error": "Invalid credentials"}), 401
 
     if user["password"] != password:
+        FAILED_LOGINS[key].append(now)
         logger.warning("Invalid credentials - Wrong password", extra={"ip": client_ip, "username": username})
         return jsonify({"error": "Invalid credentials"}), 401
 
+    # Đăng nhập thành công thì reset bộ đếm
+    FAILED_LOGINS[key] = []
     session["user_id"] = user["id"]
     logger.info("Login successful", extra={"ip": client_ip, "username": username})
     return jsonify({"message": f"Logged in as {username} (secure)"})
